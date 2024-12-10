@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caluculater</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width:100vw;
+            height:100vh;
+        }
+        .caluculater-container{
+            width:100vw;
+            height:100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            /* background-color: aquamarine; */
+        }
+        .calculater{
+            width:300px;
+            height:400px;
+            /* background-color: aliceblue; */
+            display:grid;
+            grid-template-columns: repeat(1fr,4);
+            grid-template-rows: 2fr,repeat(1fr,5);
+            gap: 3px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        }
+        #input1{
+            grid-column: 1/5;
+            grid-row: 1/2;
+            border:none;
+            text-align: right;
+            margin:20px;
+            font-size: larger;
+            
+        }
+       
+        #btn7{
+            /* padding: 20px; */
+            border-radius: 5px;
+            border:none;
+            &:hover{
+                background-color: rgb(213, 128, 17);
+                color:white;
+            }
+        }
+        #btn8{
+            /* padding: 20px; */
+            border-radius: 5px;
+            border:none;
+            &:hover{
+                background-color: rgb(213, 128, 17);
+                color:white;
+            }
+        }
+        #btn9{
+            border-radius: 5px;
+            border:none;
+            &:hover{
+                background-color: rgb(213, 128, 17);
+                color:white;
+            }
+        }
+        #btnX{
+            border-radius: 5px;
+            border:none;
+            &:hover{
+                background-color: rgb(213, 128, 17);
+                color:white;
+            }
+        }
+        #btn4{
+            border-radius: 5px;
+            border:none;
+            &:hover{
+                background-color: rgb(213, 128, 17);
+                color:white;
+            }
+        }
+        #btn5{
+            border-radius: 5px;
+            border:none;
+            &:hover{
+                background-color: rgb(213, 128, 17);
+                color:white;
+            }
+        }
+        #btn6{
+            border-radius: 5px;
+            border:none;
+            &:hover{
+                background-color: rgb(213, 128, 17);
+                color:white;
+            }
+        }
+        #btndivi{
+            grid-column: 3/5;
+        }
+        #btn-,#btn1,#btn2,#btn3,#btnplus,#btn0,#btndot,#btnequal,#btnmodul,#btnc,#btnback,#btndivi{
+            border-radius: 5px;
+            border:none;
+            &:hover{
+                background-color: rgb(213, 128, 17);
+                color:white;
+            } 
+        }
+    </style>
+</head>
+<body>
+    <div class="caluculater-container">
+        <div class="calculater">
+            <input type="text" id="input1">
+            <button id="btn7">7</button>
+            <button id="btn8">8</button>
+            <button id="btn9">9</button>
+            <button id="btnX" onclick="input1.value +='*'">x</button>
+            <button id="btn4">4</button>
+            <button id="btn5">5</button>
+            <button id="btn6">6</button>
+            <button id="btn-" onclick="input1.value +='-'">-</button>
+            <button id="btn1">1</button>
+            <button id="btn2">2</button>
+            <button id="btn3">3</button>
+            <button id="btnplus" onclick="input1.value +='+'">+</button>
+            <button id="btn0">0</button>
+            <button id="btndot">.</button>
+            <button id="btnequal" onclick="input1.value=eval(input1.value)">=</button>
+            <button id="btnmodul" onclick="input1.value +='%'">%</button>
+            <button id="btnc" onclick="input1.value =''">AC</button>
+            <button id="btnback" onclick="input1.value =input1.value.toString().slice(0,-1)">DE</button>
+            <button id="btndivi" onclick="input1.value +='/'">/</button>
+        </div>
+        
+    </div>
+    <script>
+        let btn7=document.getElementById("btn7");
+        let btn8=document.getElementById("btn8");
+        let btn9=document.getElementById("btn9");
+        let btn4=document.getElementById("btn4");
+        let btn5=document.getElementById("btn5");
+        let btn6=document.getElementById("btn6");
+        let btn3=document.getElementById("btn3");
+        let btn2=document.getElementById("btn2");
+        let btn1=document.getElementById("btn1");
+        let btn0=document.getElementById("btn0");
+        let btndot=document.getElementById("btndot");
+        let input1=document.getElementById('input1');
+        let btnplus=document.getElementById('btnplus');
+        btn7.onclick=value7;
+        function value7(){
+            // console.log(btn7.innerText)
+            // let val7=btn7.innerText;
+            // console.log(val7);
+            input1.value+=btn7.innerText;
+            
+        }
+        btn8.addEventListener("click",function(){
+            input1.value+=btn8.innerText;
+        })
+        btn9.addEventListener("click",function(){
+            input1.value+=btn9.innerText;
+        })
+        btn5.addEventListener("click",function(){
+            input1.value+=btn5.innerText;
+        })
+        btn4.addEventListener("click",function(){
+            input1.value+=btn4.innerText;
+        })
+        btn6.addEventListener("click",function(){
+            input1.value+=btn6.innerText;
+        })
+        btn3.addEventListener("click",function(){
+            input1.value+=btn3.innerText;
+        })
+        btn2.addEventListener("click",function(){
+            input1.value+=btn2.innerText;
+        })
+        btn1.addEventListener("click",function(){
+            input1.value+=btn1.innerText;
+        })
+        btn0.addEventListener("click",function(){
+            input1.value+=btn0.innerText;
+        })
+        btndot.addEventListener("click",function(){
+            input1.value+=btndot.innerText;
+        })
+      
+
+    </script>
+</body>
+</html>
